@@ -1,0 +1,55 @@
+$primary-color: #4AA6F5
+
+.main-container
+  width: 95%
+  max-width: 600px
+  margin: 0 auto
+  min-height: 100vh
+  padding: 2em
+
+  h1
+    text-align: center
+    margin: 0 auto 50px auto
+
+  .bars-container
+    .bar
+      width: 100%
+      margin-bottom: 30px
+      height: 40px
+      padding: 0
+      border-radius: 3px
+      background: $primary-color
+      overflow: hidden
+      position: relative
+      .bar-text
+        position: absolute
+        height: 40px
+        line-height: 40px
+        color: #fff
+        width: 100%
+        text-align: center
+        z-index: 1
+      .bar-value
+        background: black
+        transition: all .5s
+        height: 100%
+        background: darken($primary-color, 15%)
+        &.warning
+          background: red
+
+  .action-container
+    margin-top: 10px
+    select
+      border-radius: 3px
+    button
+      width: 25%
+      margin-left: 5px
+      &:first-child
+        margin-left: 0
+
+.loading
+  height: 100vh
+  padding: 1em
+  .ani-spin
+    font-size: 3em
+    color: darken($primary-color, 15%)

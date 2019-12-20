@@ -1,0 +1,32 @@
+<div class="main-container d-flex flex-column flex-justify-center" *ngIf="dataReady">
+  <h1 class="animated fadeInDown">Progress Bar</h1>
+
+  <div class="bars-container animated fadeInLeft delay-1s">
+    <div class="bar" *ngFor="let bar of pb.bars; let i = index; trackBy: trackByFn">
+      <div class="bar-text">{{bar}}%</div>
+      <div class="bar-value"
+        [style.width]="bar + '%'"
+        [@changeWidth]="{value: 'true', params : {newWidth: bar}}"
+        [ngClass]="{'warning': bar > 100}"></div>
+    </div>
+  </div>
+
+  <div class="action-container grid animated fadeInRight delay-2s">
+      <div class="row">
+          <div class="cell-sm-full cell-md-4">
+            <select data-role="select" (change)="selectPb($event.target.value)">
+              <option value="{{i}}" *ngFor="let bar of pb.bars; let i = index; trackBy: trackByFn">Progress {{i+1}}</option>
+            </select>
+          </div>
+          <div class="cell-sm-full cell-md-8">
+            <div class="d-flex flex-justify-end">
+              <button class="button primary outline" *ngFor="let btn of pb.buttons" (click)="changeBarValue(btn)">{{btn}}</button>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="loading d-flex flex-justify-center flex-align-center" *ngIf="!dataReady" >
+  <span class="mif-spinner4 ani-spin"></span>
+</div>
