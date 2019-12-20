@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class ApiService {
 
-  private pbApi = "http://pb-api.herokuapp.com/bars";
+  private pbApi = "https://pb-api.herokuapp.com/bars"
 
   constructor(private http: HttpClient) {}
 
