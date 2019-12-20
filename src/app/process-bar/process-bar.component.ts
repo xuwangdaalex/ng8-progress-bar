@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Pb, ApiService } from "../api/api.service";
+import { ApiService } from "../api/api.service";
 import { trigger, state, style, transition, animate} from '@angular/animations';
 
 @Component({
@@ -18,7 +18,7 @@ import { trigger, state, style, transition, animate} from '@angular/animations';
 
 export class ProcessBarComponent implements OnInit {
 
-  pb: Pb[];
+  pb: any;
   currentBarIndex = 0;
   dataReady = false
 
